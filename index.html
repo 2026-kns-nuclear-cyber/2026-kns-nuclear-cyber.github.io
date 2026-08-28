@@ -154,6 +154,19 @@
     background:var(--card);border:1px solid var(--border);
     border-radius:var(--radius);padding:20px;
   }
+  .about-grid{display:flex;flex-direction:column;gap:14px}
+  .ct{font-size:15px;font-weight:700;margin:0 0 12px}
+  .plist{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .plist li{position:relative;padding-left:16px;font-size:14.5px;line-height:1.6;word-break:keep-all}
+  .plist li::before{
+    content:"";position:absolute;left:0;top:.58em;
+    width:6px;height:6px;border-radius:2px;background:var(--accent);
+  }
+  .plist.sub li::before{width:5px;height:5px;border-radius:50%;background:var(--muted)}
+  .ex{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+  .ex summary{cursor:pointer;font-size:13.5px;font-weight:500;color:var(--muted)}
+  .ex summary:hover{color:var(--ink)}
+  .ex .plist{margin-top:10px}
 
   /* ═══ 프로그램 표 ═══ */
   .tablewrap{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
@@ -343,9 +356,36 @@
   <!-- ═══ ② 소개 ═══ -->
   <section id="about">
     <h2 data-en="About">소개</h2>
-    <div class="card">
-      <p>본 세션에서는 원자력시설 사이버보안의 최신 연구 동향과 규제 현안을 공유합니다.
-      프로그램은 학회 일정 확정 후 업데이트되며, 발표자료는 세션 종료 후 본 페이지에서 내려받을 수 있습니다.</p>
+    <div class="about-grid">
+      <div class="card">
+        <h3 class="ct" data-en="Objectives">개최 목적</h3>
+        <ul class="plist">
+          <li>방사능방재법 개정 및 국제 사이버보안 규제·기술기준 변화에 따른 원자력시설 사이버보안 규제 이슈와 대응 방향 공유</li>
+          <li>대형원전·SMR·AR 등 사이버보안 적용 현황 및 생애주기별 보안내재화(Security by Design) 이행 방향 논의</li>
+          <li>규제기관·연구기관·산업체 간 효율적인 사이버보안 강화를 위한 협력 방안 모색</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="ct" data-en="Topics">주요 내용</h3>
+        <ul class="plist">
+          <li>원자력시설 사이버보안 국제 규제·기술기준 동향 및 국내 현황 (대형원전·SMR·AR 등)</li>
+          <li>방사능방재법 개정에 따른 보안내재화(Security by Design) 이슈 및 규제·심사·검사 방향</li>
+          <li>국가 원자력시설 생애주기별 보안내재화 지침 주요 내용 및 보안관제 이슈</li>
+          <li>가동원전·기반시설 사이버보안 관제기술 도입 계획 및 제어기 수준 보안 모니터링 기술 연구 현황</li>
+          <li>AR 연구개발 현황과 활용처(MSR 추진 선박 등) 핵안보 이슈</li>
+        </ul>
+        <details class="ex">
+          <summary data-en="Example talk topics">발표 주제 예시 보기</summary>
+          <ul class="plist sub">
+            <li>방사능방재법 개정에 따른 보안내재화(Security by Design) 이슈 및 규제 방향</li>
+            <li>국가 원자력시설 대상 생애주기별 보안내재화 지침: 주요 내용과 추진 방향</li>
+            <li>가동원전 사이버보안 강화를 위한 관제기술 도입 계획</li>
+            <li>설계단계 사이버보안 이행 현황</li>
+            <li>기반시설보안 관제기술 동향 및 적용 현황</li>
+            <li>MSR 추진 선박 개발 현황과 핵안보 이슈</li>
+          </ul>
+        </details>
+      </div>
     </div>
   </section>
 
