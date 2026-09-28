@@ -109,7 +109,7 @@
     min-height:clamp(380px,42vw,600px);   /* 화면 폭에 따라 높이 자동 조절 */
     padding:96px 0 44px;                  /* 내용이 길면 히어로가 함께 늘어나 잘리지 않음 */
   }
-  .hero .container{width:100%}
+  .hero .container{width:100%;position:relative;z-index:1}  /* 글자를 사진·오버레이 위로 */
   .hero .hero-bg{
     position:absolute;inset:0;width:100%;height:100%;
     object-fit:cover;filter:grayscale(1);
@@ -160,6 +160,19 @@
     content:"";position:absolute;left:0;top:.58em;
     width:6px;height:6px;border-radius:2px;background:var(--accent);
   }
+
+  /* ═══ 섹션 제목 + 통합 다운로드 버튼 ═══ */
+  .sechead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .sechead h2{margin-bottom:0}
+  .allbtn{
+    display:inline-flex;align-items:center;gap:7px;
+    border:1px solid var(--accent);border-radius:var(--radius);
+    color:var(--accent);background:var(--bg);
+    padding:7px 14px;font-size:13.5px;font-weight:500;
+    transition:background .15s,color .15s;
+  }
+  .allbtn:hover{background:var(--accent);color:var(--accent-fg)}
+  .allbtn svg{width:15px;height:15px;flex-shrink:0}
 
   /* ═══ 프로그램 표 ═══ */
   .tablewrap{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
@@ -301,10 +314,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <span class="u" data-en="HICO Gyeongju, Room 204 (2F)">경주화백컨벤션센터 2층 204호</span>
       </a>
-      <span class="chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 11v2"/><path d="M13 17v2"/></svg>
-        <span class="u" data-en="Registration ₩50,000 · Dinner included">등록비 50,000원 · 석식 제공</span>
-      </span>
     </div>
   </div>
 </div>
@@ -341,7 +350,15 @@
        자료가 없는 발표는 <a class="dlbtn">…</a> 를
        <span class="nofile" data-en="TBD">준비 중</span> 으로 바꾸면 됩니다. ═══ -->
   <section id="program">
-    <h2 data-en="Program">프로그램</h2>
+    <div class="sechead">
+      <h2 data-en="Program">프로그램</h2>
+      <!-- 통합 발표자료: files/proceedings.pdf 로 통합본을 넣으면 연결됩니다.
+           파일이 준비되기 전에는 버튼을 숨기려면 아래 a 태그에 style="display:none" 추가 -->
+      <a class="allbtn" href="files/proceedings.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-en="Download all slides (PDF)">통합 발표자료 내려받기 (PDF)</span>
+      </a>
+    </div>
     <p class="desc" data-en="Presentation slides will be available via the download icons after the session, for talks whose speakers have consented to public release.">※ 발표자료는 발표자가 공개에 동의한 자료에 한해, 세션 종료 후 우측 아이콘으로 내려받으실 수 있습니다.</p>
     <div class="tablewrap">
       <table>
@@ -412,7 +429,7 @@
       <span class="mapgo" data-en="Directions">네이버지도 길안내 →</span>
     </a>
     <div class="mapembed">
-      <span data-en="Paste the Naver Map embed code here to display the map.">네이버지도 '지도 퍼가기' 코드를 붙여넣으면 이 자리에 지도가 표시됩니다.</span>
+      <iframe src="https://map.naver.com/p/embed/place/1306682069" title="보문갈비 지도" loading="lazy" allow="fullscreen"></iframe>
     </div>
   </section>
 
