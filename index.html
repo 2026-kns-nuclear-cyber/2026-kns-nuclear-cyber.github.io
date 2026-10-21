@@ -182,15 +182,6 @@
   td.time{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;width:140px}
   tr.break td{color:var(--muted);background:var(--bg-subtle)}
   td .who{color:var(--muted);font-size:13.5px}
-  td.mat{width:70px;text-align:center;vertical-align:middle}
-  th.mat{text-align:center}
-  .dlbtn{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:32px;height:32px;border:1px solid var(--border);border-radius:6px;
-    color:var(--accent);transition:background .15s,border-color .15s;
-  }
-  .dlbtn:hover{background:var(--bg-subtle);border-color:var(--accent)}
-  .dlbtn svg{width:15px;height:15px}
   .nofile{color:var(--muted);font-size:13px}
 
   /* ═══ 만찬 장소 카드 + 지도 ═══ */
@@ -239,7 +230,7 @@
 
   /* ═══ 인쇄 ═══ */
   @media print{
-    header,#mobileNav,.dl,.dlbtn,footer .noprint{display:none!important}
+    header,#mobileNav,.dl,footer .noprint{display:none!important}
     body{background:#fff;color:#000}
     section{padding:20px 0 0}
     .hero{background:#fff;color:#000;padding:0 0 16px}
@@ -346,10 +337,8 @@
     </div>
   </section>
 
-  <!-- ═══ ③ 프로그램 (최종 확정본) — 자료가 준비되면 files/ 폴더에
-       presentation1.pdf ~ presentation7.pdf 를 넣으면 내려받기 버튼과 연결됩니다.
-       자료가 없는 발표는 <a class="dlbtn">…</a> 를
-       <span class="nofile" data-en="TBD">준비 중</span> 으로 바꾸면 됩니다. ═══ -->
+  <!-- ═══ ③ 프로그램 (최종 확정본) — 발표자료는 통합본 하나로 제공:
+       통합 PDF를 files/proceedings.pdf 경로로 올리면 상단 버튼과 연결됩니다. ═══ -->
   <section id="program">
     <div class="sechead">
       <h2 data-en="Program">프로그램</h2>
@@ -360,55 +349,46 @@
         <span data-en="Download all slides (PDF)">통합 발표자료 내려받기 (PDF)</span>
       </a>
     </div>
-    <p class="desc" data-en="Presentation slides will be available via the download icons after the session, for talks whose speakers have consented to public release.">※ 발표자료는 발표자가 공개에 동의한 자료에 한해, 세션 종료 후 우측 아이콘으로 내려받으실 수 있습니다.</p>
+    <p class="desc" data-en="The combined proceedings (PDF) include slides whose speakers have consented to public release — use the download button above.">※ 발표자료는 발표자가 공개에 동의한 자료에 한해 통합본(PDF)으로 제공되며, 위의 '통합 발표자료 내려받기' 버튼으로 받으실 수 있습니다.</p>
     <div class="tablewrap">
       <table>
-        <tr><th data-en="Time">시간</th><th data-en="Presentation">발표</th><th class="mat" data-en="Slides">자료</th></tr>
+        <tr><th data-en="Time">시간</th><th data-en="Presentation">발표</th></tr>
         <tr>
           <td class="time">14:00 – 14:05</td>
           <td><span data-en="Opening">개회사</span><br><span class="who" data-en="Jong-Gyun Choi · KAERI">최종균 · 한국원자력연구원</span></td>
-          <td class="mat"><span class="nofile">–</span></td>
         </tr>
         <tr>
           <td class="time">14:05 – 14:30</td>
           <td><span data-en="Nuclear Cybersecurity: Trends and Issues">원자력시설 사이버보안 동향과 이슈</span><br><span class="who" data-en="Jae-Gu Song · KAERI">송재구 · 한국원자력연구원</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation1.pdf" download aria-label="발표자료 1 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">14:30 – 14:55</td>
           <td><span data-en="Amended Act on Physical Protection and Radiological Emergency: Proposed Security Regulations by Licensing Stage and Cybersecurity Review Approach for i-SMR">방사능방재법 개정에 따른 인·허가단계별 보안규제안 및 i-SMR 사이버보안 심사방향</span><br><span class="who" data-en="Kookheui Kwon · KINAC">권국희 · 한국원자력통제기술원</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation2.pdf" download aria-label="발표자료 2 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">14:55 – 15:20</td>
           <td><span data-en="Introduction to the Lifecycle-Based Security-by-Design Guidelines and Commentary for National Nuclear Facilities">국가 원자력시설 대상 생애주기별 보안내재화 지침 및 해설서 소개</span><br><span class="who" data-en="Manhyun Chung · NSR">정만현 · 국가보안기술연구소</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation3.pdf" download aria-label="발표자료 3 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">15:20 – 15:45</td>
           <td><span data-en="Nuclear Power Plant Cybersecurity Defense-in-Depth: Technical Standards Analysis and Implementation">원전 사이버보안 심층방호: 기술기준 분석 및 적용 방안</span><br><span class="who" data-en="Jeong-Kweon Lee · KEPCO E&amp;C">이정권 · 한국전력기술</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation4.pdf" download aria-label="발표자료 4 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
-        <tr class="break"><td class="time">15:45 – 16:05</td><td colspan="2" data-en="Break">휴식</td></tr>
+        <tr class="break"><td class="time">15:45 – 16:05</td><td data-en="Break">휴식</td></tr>
         <tr>
           <td class="time">16:05 – 16:30</td>
           <td><span data-en="Development of MSR Powered Ship and Related Cybersecurity Issues">MSR 추진선박 개발 현황과 사이버보안 연계 이슈</span><br><span class="who" data-en="Jong-Won Kim · Samsung Heavy Industries">김종원 · 삼성중공업</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation5.pdf" download aria-label="발표자료 5 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">16:30 – 16:55</td>
           <td><span data-en="Enhancement and Implementation Status of Security Monitoring Systems for National Critical Infrastructure">국가 핵심 인프라 보안 모니터링 시스템 강화 및 이행 현황</span><br><span class="who" data-en="Jin-Chul Kim · KEPCO KDN">김진철 · 한전KDN</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation6.pdf" download aria-label="발표자료 6 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">16:55 – 17:20</td>
           <td><span data-en="Research Status of Controller-Level Security Monitoring Technology for Cybersecurity Operations in Nuclear Power Plants">원전 사이버보안 관제를 위한 제어기 수준의 보안 모니터링 기술 연구 현황</span><br><span class="who" data-en="Kwang-Seop Son · KAERI">손광섭 · 한국원자력연구원</span></td>
-          <td class="mat"><a class="dlbtn" href="files/presentation7.pdf" download aria-label="발표자료 7 내려받기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></td>
         </tr>
         <tr>
           <td class="time">17:20 – 17:30</td>
           <td data-en="Discussion and Closing">종합토의 및 폐회</td>
-          <td class="mat"><span class="nofile">–</span></td>
         </tr>
       </table>
     </div>
