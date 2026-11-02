@@ -206,6 +206,7 @@
 
   /* ═══ 사진 ═══ */
   .photos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .photos .pitem{display:block}
   .photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border)}
   .placeholder{
     border:1px dashed var(--border);border-radius:var(--radius);
@@ -423,13 +424,41 @@
   <!-- ═══ ⑤ 현장 사진 — 사진 생기면 placeholder 지우고 photos div 주석 해제 ═══ -->
   <section id="photos">
     <h2 data-en="Photos">현장 사진</h2>
-    <div class="placeholder" data-en="Photos will be shared after the session.">세션 종료 후 현장 사진이 공유될 예정입니다.</div>
-    <!--
+    <p class="desc" data-en="Tap a photo to view it in full size.">사진을 누르면 원본 크기로 볼 수 있습니다.</p>
+    <!-- photos/ 폴더에 photo1.jpg, photo2.jpg … 순서로 올리면 올린 만큼 자동 표시됩니다 (최대 30장).
+         30장 넘게 올리려면 아래 블록에 같은 형식의 a 태그를 추가하세요. -->
     <div class="photos">
-      <img src="photos/photo1.jpg" alt="세션 현장">
-      <img src="photos/photo2.jpg" alt="세션 현장">
+      <a class="pitem" href="photos/photo1.jpg" target="_blank" rel="noopener"><img src="photos/photo1.jpg" alt="워크숍 현장 사진 1" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo2.jpg" target="_blank" rel="noopener"><img src="photos/photo2.jpg" alt="워크숍 현장 사진 2" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo3.jpg" target="_blank" rel="noopener"><img src="photos/photo3.jpg" alt="워크숍 현장 사진 3" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo4.jpg" target="_blank" rel="noopener"><img src="photos/photo4.jpg" alt="워크숍 현장 사진 4" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo5.jpg" target="_blank" rel="noopener"><img src="photos/photo5.jpg" alt="워크숍 현장 사진 5" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo6.jpg" target="_blank" rel="noopener"><img src="photos/photo6.jpg" alt="워크숍 현장 사진 6" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo7.jpg" target="_blank" rel="noopener"><img src="photos/photo7.jpg" alt="워크숍 현장 사진 7" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo8.jpg" target="_blank" rel="noopener"><img src="photos/photo8.jpg" alt="워크숍 현장 사진 8" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo9.jpg" target="_blank" rel="noopener"><img src="photos/photo9.jpg" alt="워크숍 현장 사진 9" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo10.jpg" target="_blank" rel="noopener"><img src="photos/photo10.jpg" alt="워크숍 현장 사진 10" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo11.jpg" target="_blank" rel="noopener"><img src="photos/photo11.jpg" alt="워크숍 현장 사진 11" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo12.jpg" target="_blank" rel="noopener"><img src="photos/photo12.jpg" alt="워크숍 현장 사진 12" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo13.jpg" target="_blank" rel="noopener"><img src="photos/photo13.jpg" alt="워크숍 현장 사진 13" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo14.jpg" target="_blank" rel="noopener"><img src="photos/photo14.jpg" alt="워크숍 현장 사진 14" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo15.jpg" target="_blank" rel="noopener"><img src="photos/photo15.jpg" alt="워크숍 현장 사진 15" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo16.jpg" target="_blank" rel="noopener"><img src="photos/photo16.jpg" alt="워크숍 현장 사진 16" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo17.jpg" target="_blank" rel="noopener"><img src="photos/photo17.jpg" alt="워크숍 현장 사진 17" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo18.jpg" target="_blank" rel="noopener"><img src="photos/photo18.jpg" alt="워크숍 현장 사진 18" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo19.jpg" target="_blank" rel="noopener"><img src="photos/photo19.jpg" alt="워크숍 현장 사진 19" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo20.jpg" target="_blank" rel="noopener"><img src="photos/photo20.jpg" alt="워크숍 현장 사진 20" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo21.jpg" target="_blank" rel="noopener"><img src="photos/photo21.jpg" alt="워크숍 현장 사진 21" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo22.jpg" target="_blank" rel="noopener"><img src="photos/photo22.jpg" alt="워크숍 현장 사진 22" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo23.jpg" target="_blank" rel="noopener"><img src="photos/photo23.jpg" alt="워크숍 현장 사진 23" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo24.jpg" target="_blank" rel="noopener"><img src="photos/photo24.jpg" alt="워크숍 현장 사진 24" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo25.jpg" target="_blank" rel="noopener"><img src="photos/photo25.jpg" alt="워크숍 현장 사진 25" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo26.jpg" target="_blank" rel="noopener"><img src="photos/photo26.jpg" alt="워크숍 현장 사진 26" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo27.jpg" target="_blank" rel="noopener"><img src="photos/photo27.jpg" alt="워크숍 현장 사진 27" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo28.jpg" target="_blank" rel="noopener"><img src="photos/photo28.jpg" alt="워크숍 현장 사진 28" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo29.jpg" target="_blank" rel="noopener"><img src="photos/photo29.jpg" alt="워크숍 현장 사진 29" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+      <a class="pitem" href="photos/photo30.jpg" target="_blank" rel="noopener"><img src="photos/photo30.jpg" alt="워크숍 현장 사진 30" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
     </div>
-    -->
   </section>
 
   <!-- ═══ ⑥ 문의 ═══ -->
